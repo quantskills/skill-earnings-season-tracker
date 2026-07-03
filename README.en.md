@@ -149,7 +149,9 @@ earnings-season-tracker/
 ├── scripts/
 │   └── validate_report.py            # ✅ Checks required sections, source notes, reporting-period labels, disclaimer
 └── agents/
-    └── openai.yaml                   # OpenAI/Codex adapter
+    ├── cursor-rule.mdc               # Cursor adapter
+    ├── openai.yaml                   # OpenAI/Codex adapter
+    └── portable-loader.md            # Claude Code/Hermes/OpenClaw adapter
 ```
 
 ---

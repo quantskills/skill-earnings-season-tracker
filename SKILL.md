@@ -31,14 +31,14 @@ quantSkills:
   - hermes
   - openclaw
   - cursor
-  status: stable
+  status: draft
   validation_level: runnable
-  maintainer_type: official
+  maintainer_type: community
   summary_zh: 按财报季时间窗对全市场做业绩横截面扫描：预告类型分布、超预期/暴雷榜、行业业绩景气、年报季审计非标清单 —— 每个数据点可溯源，支持财报季定时运行。
   summary_en: Whole-market A-share earnings-season scanner covering forecast-type
     distribution, beat/miss leaders, industry earnings prosperity, and audit-opinion
     watchlists.
-  license: GPL-3.0
+  license: GPL-3.0-only
   requires:
   - skill-pandadata-api
 ---

@@ -149,7 +149,9 @@ earnings-season-tracker/
 ├── scripts/
 │   └── validate_report.py            # ✅ 校验报告必备章节/来源标注/报告期/免责声明
 └── agents/
-    └── openai.yaml                   # OpenAI/Codex 适配
+    ├── cursor-rule.mdc               # Cursor 适配
+    ├── openai.yaml                   # OpenAI/Codex 适配
+    └── portable-loader.md            # Claude Code/Hermes/OpenClaw 适配
 ```
 
 ---
