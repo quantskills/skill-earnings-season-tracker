@@ -43,6 +43,49 @@ quantSkills:
   - skill-pandadata-api
 ---
 
+```json qsh-form
+{
+  "version": 1,
+  "task": {
+    "placeholder": "补充财报季扫描范围、报告期、行业关注点或定时运行要求"
+  },
+  "fields": [
+    {
+      "key": "date",
+      "label": "扫描基准日期",
+      "type": "date",
+      "help": "留空时按最新可用交易日判断当前财报季窗口"
+    },
+    {
+      "key": "mode",
+      "label": "扫描模式",
+      "type": "select",
+      "default": "full",
+      "options": [
+        { "value": "full", "label": "全市场综合扫描" },
+        { "value": "forecast", "label": "业绩预告分布" },
+        { "value": "beat_miss", "label": "超预期与暴雷" },
+        { "value": "industry", "label": "行业业绩景气" },
+        { "value": "audit", "label": "审计非标清单" }
+      ]
+    },
+    {
+      "key": "period",
+      "label": "报告期",
+      "type": "text",
+      "placeholder": "如：2025年报、2026Q1；留空则按基准日期推断"
+    },
+    {
+      "key": "focus",
+      "label": "重点关注",
+      "type": "text",
+      "placeholder": "如：半导体行业、预增占比、非标审计意见"
+    }
+  ],
+  "prompt_template": "{{#task}}任务与材料：\n{{task}}\n\n{{/task}}{{#attachments}}用户上传的材料（已放入工作区）：\n{{attachments}}\n\n{{/attachments}}请执行 A 股财报季 {{mode}}。{{#date}}扫描基准日期为 {{date}}。{{/date}}{{#period}}目标报告期为 {{period}}。{{/period}}{{#focus}}重点关注：{{focus}}。{{/focus}}按披露窗口扫描全市场，统计预告类型、披露进度、超预期与暴雷、行业景气及适用时的审计非标，逐项标注 Pandadata 方法、报告期、快照日期与缺失数据，并输出中文报告。"
+}
+```
+
 # Earnings Season Tracker
 
 Use this skill to scan the **entire A-share market across an earnings-season time window** and produce a sourced cross-sectional report: who issued performance forecasts, how forecast types are distributed, which names beat or blew up, how earnings prosperity spreads across industries, and which companies received non-standard audit opinions during annual-report season. Prefer Pandadata as the data source, keep every statistic traceable to an interface and report period, and never invent missing figures.
